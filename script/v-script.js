@@ -134,12 +134,13 @@ const ExampleStore = {
     },
     filterVisibility(){
       this.newVal = window.pageYOffset
-      console.log(this.oldVal + ' ' + this.newVal);
-      if (this.newVal > this.oldVal && this.newVal > 30) {
+      if (this.newVal > this.oldVal && this.newVal > 40) {
+        console.log('down '+this.oldVal + ' ' + this.newVal);
         this.filterStatus = false
         this.oldVal = this.newVal
         
-      } else if (this.newVal < this.oldVal && this.newVal < 30) {
+      } else if (this.newVal < this.oldVal && this.oldVal - this.newVal > 40) {
+        console.log('up ' + this.oldVal + ' ' + this.newVal);
         this.filterStatus = true
         this.oldVal = this.newVal
       }
