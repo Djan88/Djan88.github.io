@@ -134,7 +134,7 @@ const ExampleStore = {
     },
     filterVisibility(){
       this.newVal = window.pageYOffset
-      this.newVal > this.oldVal ? this.filterStatus = false : this.filterStatus = true
+      this.newVal - this.oldVal > 20 ? this.filterStatus = false : this.filterStatus = true
       this.oldVal = this.newVal
     }
   },
