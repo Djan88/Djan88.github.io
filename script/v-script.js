@@ -139,7 +139,7 @@ const ExampleStore = {
         this.filterStatus = false
         this.oldVal = this.newVal
         
-      } else if (this.newVal < this.oldVal) {
+      } else if (this.newVal < this.oldVal && this.newVal < 30) {
         this.filterStatus = true
         this.oldVal = this.newVal
       }
