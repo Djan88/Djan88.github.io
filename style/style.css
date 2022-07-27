@@ -1,0 +1,139 @@
+body,h1,h2,h3,h4,p,ul[class],ol[class],li
+{
+  margin: 0;
+  padding: 0;
+}
+*,*::before,*::after {
+  box-sizing: border-box;
+}
+.heading {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  margin: 15px;
+}
+.heading_4 {
+  font-size: 20px;
+}
+.store
+{
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  padding-top: 120px;
+  max-width: 400px;
+  min-height: 300px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.find
+{
+  position: fixed;
+  width: 400px;
+  display: flex;
+  left: 0;
+  top: 0;
+  height: 40px;
+  background: #fff;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+.find__field 
+{
+  width: 390px;
+  max-width: 95%;
+  height: 30px;
+  padding: 5px;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0px 0px 9px 3px rgb(0 0 0 / 8%) inset;
+}
+.filters
+{
+  max-width: 400px;
+  position: fixed;
+  left: 0;
+  top: 40px;
+  background-color: #fff;
+}
+.filters__inner
+{
+  display: flex;
+  box-shadow: 0 6px 16px rgb(26 61 107 / 16%);
+  overflow-x: auto;
+  flex-direction: row;
+  max-width: 100%;
+  height: 40px;
+  padding: 0 5px;
+}
+
+.filters__item 
+{
+  border: 2px solid #505050;
+  color: #505050;
+  height: 33px;
+  padding: 5px;
+  border-radius: 6px;
+  margin-right: 5px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.filters__item:last-child
+{
+  margin-right: 0;
+}
+.filters__item_selected {
+  border-color: #0cc9ed;
+  background: #0cc9ed;
+  color: #fff;
+}
+/* .catalog {
+
+} */
+
+.catalog__row {
+  display: flex;
+  overflow-x: auto;
+  flex-direction: row;
+  max-width: 100%;
+  padding: 15px;
+}
+.catalog__item {
+  color: #505050;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 130px;
+  min-width: 300px;
+  padding: 5px;
+  border-radius: 6px;
+  margin-right: 10px;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0px 0px 12px 2px rgb(26 61 107 / 16%);
+}
+.catalog__item-name
+{
+  font-size: 20px;
+}
+.catalog__item-categoryes 
+{
+  font-size: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.catalog__item-categoryes div
+{
+  margin-right: 10px;
+}
+.fade-enter-active,
+.fade-leave-active {
+  box-shadow: none;
+  transition: height, 0.3s ease-in-out;  
+  transform: translate3d(0px, -40px, 0px);
+}
+.fade-enter-from,
+.fade-leave-to {
+  height: 0;
+}

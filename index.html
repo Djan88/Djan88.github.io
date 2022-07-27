@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/vue@next"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style/style.css">
+  <title>Store</title>
+</head>
+<body>
+<div id="app">
+  <section class="store">
+    <div class="find">
+      <input class="find__field" v-model="query" type="text" placeholder="Поиск по всем категориям">
+    </div>
+    <div class="filters">
+      <transition name="fade">
+        <div v-if="filterStatus" class="filters__inner">
+          <div 
+          class="filters__item"
+          :class="{
+            'filters__item_selected': filter.selected === true,
+          }" 
+          v-for="filter in filters" :key="filter.id"
+          @click="selectFilter(filter.id), filteredStores">
+          {{filter.name}}</div>
+        </div>
+      </transition>
+    </div>
+    <div class="catalog">
+      <h4 class="heading heading_4">Самое новое</h4>
+      <div class="catalog__row">
+        <div 
+        class="catalog__item"
+        v-for="store in queryParams" :key="store.id">
+          <div class="catalog__item-name">{{store.name}}</div>
+          <div class="catalog__item-categoryes">
+            <div
+            v-for="category, index in store.categoryes" :key="index"> {{category}}</div>
+          </div>
+        </div>
+      </div>
+      <h4 class="heading heading_4">Популярное сегодня</h4>
+      <div class="catalog__row">
+        <div 
+        class="catalog__item"
+        v-for="store in queryParams" :key="store.id">
+          <div class="catalog__item-name">{{store.name}}</div>
+          <div class="catalog__item-categoryes">
+            <div
+            v-for="category, index in store.categoryes" :key="index"> {{category}}</div>
+          </div>
+        </div>
+      </div>
+      <h4 class="heading heading_4">Успеть в последний день</h4>
+      <div class="catalog__row">
+        <div 
+        class="catalog__item"
+        v-for="store in queryParams" :key="store.id">
+          <div class="catalog__item-name">{{store.name}}</div>
+          <div class="catalog__item-categoryes">
+            <div
+            v-for="category, index in store.categoryes" :key="index"> {{category}}</div>
+          </div>
+        </div>
+      </div>
+      <h4 class="heading heading_4">Суперцены</h4>
+      <div class="catalog__row">
+        <div 
+        class="catalog__item"
+        v-for="store in queryParams" :key="store.id">
+          <div class="catalog__item-name">{{store.name}}</div>
+          <div class="catalog__item-categoryes">
+            <div
+            v-for="category, index in store.categoryes" :key="index"> {{category}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<script src="script/v-script.js"></script>
+</body>
+</html>
